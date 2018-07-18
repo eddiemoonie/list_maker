@@ -1,4 +1,4 @@
-class ToDos < ActiveRecord::Base
+class Todos < ActiveRecord::Base
 
   belongs_to :user
 
