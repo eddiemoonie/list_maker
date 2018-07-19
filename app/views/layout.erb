@@ -8,11 +8,12 @@
     <div class="container">
       <h1>Weekly To-Do List</h1>
       <nav>
-        <button type="submit" name="submit"><a href="/todos">To-Do List</a></button>
-        <button type="submit" name="submit"><a href="/todos/new">Create New Task</a></button>
         <% if logged_in? %>
+          <button type="submit" name="submit"><a href="/todos">To-Do List</a></button>
+          <button type="submit" name="submit"><a href="/todos/new">Create New Task</a></button>
           <button type="submit" name="submit"><a href="/logout">Log Out</a></button>
         <% else %>
+          <button type="submit" name="submit"><a href="/login">Log In</a></button>
           <button type="submit" name="submit"><a href="/signup">Sign Up</a></button>
         <% end %>
       </nav>
