@@ -22,7 +22,7 @@ class TodosController < ApplicationController
       if params[:day] == "" || params[:description] == ""
         redirect "/todos/new"
       else
-        @todo = current_user.todos.build(:day => params[:day]. :description => params[:description])
+        @todo = current_user.todos.build(:day => params[:day], :description => params[:description])
         if @todo.save
           redirect "/todos/#{@todo.id}"
         else
