@@ -2,7 +2,7 @@ class TodosController < ApplicationController
 
   get '/todos' do
     if logged_in?
-      @todos = Todos.all
+      @todos = Todo.all
       erb :'todos/todos'
     else
       redirect '/login'
