@@ -3,3 +3,12 @@
 <div>
   <%= @todo.description %>
 </div>
+
+<br>
+
+<form action="/todos/<%= @todo.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Task">
+
+  <button type="button" name="edit"><a href="/todos/<%= @todo.id %>/edit"> Edit Task </a></button>
+</form>
