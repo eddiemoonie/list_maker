@@ -2,6 +2,8 @@
 <% @todos.each do |todo| %>
   <% if todo.day == "Monday" %>
     <a href="/todos/<%= todo.id %>"><li><%= todo.description %></li></a>
+  <% else %>
+    <p>Nothing To-Do</p>
   <% end %>
 <% end %>
 
@@ -9,6 +11,8 @@
 <% @todos.each do |todo| %>
   <% if todo.day == "Tuesday" %>
     <a href="/todos/<%= todo.id %>"><li><%= todo.description %></li></a>
+  <% else %>
+    <p>Nothing To-Do</p>
   <% end %>
 <% end %>
 
@@ -16,6 +20,8 @@
 <% @todos.each do |todo| %>
   <% if todo.day == "Wednesday" %>
     <a href="/todos/<%= todo.id %>"><li><%= todo.description %></li></a>
+  <% else %>
+    <p>Nothing To-Do</p>
   <% end %>
 <% end %>
 
@@ -23,6 +29,8 @@
 <% @todos.each do |todo| %>
   <% if todo.day == "Thursday" %>
     <a href="/todos/<%= todo.id %>"><li><%= todo.description %></li></a>
+  <% else %>
+    <p>Nothing To-Do</p>
   <% end %>
 <% end %>
 
@@ -30,6 +38,8 @@
 <% @todos.each do |todo| %>
   <% if todo.day == "Friday" %>
     <a href="/todos/<%= todo.id %>"><li><%= todo.description %></li></a>
+  <% else %>
+    <p>Nothing To-Do</p>
   <% end %>
 <% end %>
 
@@ -37,6 +47,8 @@
 <% @todos.each do |todo| %>
   <% if todo.day == "Saturday" %>
     <a href="/todos/<%= todo.id %>"><li><%= todo.description %></li></a>
+  <% else %>
+    <p>Nothing To-Do</p>
   <% end %>
 <% end %>
 
@@ -44,5 +56,7 @@
 <% @todos.each do |todo| %>
   <% if todo.day == "Sunday" %>
     <a href="/todos/<%= todo.id %>"><li><%= todo.description %></li></a>
+  <% else %>
+    <p>Nothing To-Do</p>
   <% end %>
 <% end %>
