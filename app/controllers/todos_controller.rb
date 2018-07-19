@@ -33,4 +33,13 @@ class TodosController < ApplicationController
       redirect '/login'
     end
   end
+
+  get '/todos/:id' do
+    if logged_in?
+      @todo = Todo.find_by_id(params[:id])
+      erb :'/todos/show_todo'
+    else
+      redirect '/login'
+    end
+  end
 end
