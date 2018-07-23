@@ -2,7 +2,7 @@ class TodosController < ApplicationController
 
   get '/todos' do
     if logged_in?
-      @todos = Todo.all
+      @todos = Todo.select{|todo| todo.user_id == session[:user_id]}
       erb :'todos/todos'
     else
       redirect '/login'
