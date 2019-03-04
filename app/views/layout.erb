@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
   <head>
-    <title>Weekly To-Do List</title>
+    <title>To-Do List</title>
   </head>
   <body>
 
     <div class="container">
-      <h1>Weekly To-Do List</h1>
+      <h1>To-Do List</h1>
       <nav>
         <% if logged_in? %>
-          <button type="submit" name="submit"><a href="/todos">To-Do List</a></button>
-          <button type="submit" name="submit"><a href="/todos/new">Create New Task</a></button>
+          <button type="submit" name="submit"><a href="/lists">My Lists</a></button>
+          <button type="submit" name="submit"><a href="/lists/new">Create New List</a></button>
           <button type="submit" name="submit"><a href="/logout">Log Out</a></button>
         <% else %>
           <button type="submit" name="submit"><a href="/login">Log In</a></button>

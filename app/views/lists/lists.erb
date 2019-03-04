@@ -1,0 +1,6 @@
+<h3><%= current_user.username %>'s Lists</h3>
+<div class="lists">
+  <% @lists.each do |list| %>
+    <li><a href="/lists/<%= list.id%>"><%= list.name %></a></li>
+  <% end %>
+</div>

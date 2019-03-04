@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     if logged_in?
-      redirect '/todos'
+      redirect '/lists'
     else
       erb :index
     end

@@ -1,8 +1,7 @@
-<h2>Edit Task</h2>
+<h2>Create New List</h2>
 
-<form action="/todos/<%= @todo.id %>" method="post">
-  <input type="hidden" name="_method" value="PATCH">
-  <select name="day" value="<%= @todo.day %>">
+<form action="/lists" method="post">
+  <!-- <select name="day">
     <option value="Monday">Monday</option>
     <option value="Tuesday">Tuesday</option>
     <option value="Wednesday">Wednesday</option>
@@ -10,8 +9,8 @@
     <option value="Friday">Friday</option>
     <option value="Saturday">Saturday</option>
     <option value="Sunday">Sunday</option>
-  </select>
-
-  <input type="text" name="description" value ="<%= @todo.description %>">
-  <input type="submit" name="submit" value="Edit Task">
+  </select> -->
+  <label>List Name: </label>
+  <input type="text" name="name">
+  <input type="submit" name="submit" value="Create List">
 </form>

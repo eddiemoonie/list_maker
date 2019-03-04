@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/create_users'
     else
-      redirect '/todos'
+      redirect '/lists'
     end
   end
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     else
       @user = User.create(:username => params[:username], :password => params[:password])
       session[:user_id] = @user.id
-      redirect '/todos'
+      redirect '/lists'
     end
   end
 
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/login'
     else
-      redirect '/todos'
+      redirect '/lists'
     end
   end
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     user = User.find_by(:username => params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/todos'
+      redirect '/lists'
     else
       redirect '/signup'
     end

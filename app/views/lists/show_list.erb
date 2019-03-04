@@ -1,0 +1,14 @@
+<h3><%= @list.name %></h3>
+
+<div>
+
+</div>
+
+<br>
+
+<form action="/lists/<%= @list.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete List">
+
+  <button type="button" name="edit"><a href="/lists/<%= @list.id %>/edit"> Edit List </a></button>
+</form>
