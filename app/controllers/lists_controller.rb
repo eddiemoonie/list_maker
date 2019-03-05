@@ -81,12 +81,13 @@ class ListsController < ApplicationController
   patch '/lists/:id' do
     if logged_in?
       if params[:name] == ""
-        params[:notice] = "Please enter list name."
+        flash[:notice] = "Please enter list name."
         redirect "/lists/#{params[:id]}/edit"
       else
         @list = List.find_by_id(params[:id])
         if @list && @list.user == current_user
           if @list.update(:name => params[:name])
+            flash[:notice] = "List name has been updated."
             redirect "/lists/#{@list.id}"
           else
             redirect "/lists/#{@list.id}/edit"
@@ -106,6 +107,7 @@ class ListsController < ApplicationController
       if @list && @list.user == current_user
         @list.delete
       end
+      flash[:notice] = "List has been deleted."
       redirect '/lists'
     else
       redirect '/login'
