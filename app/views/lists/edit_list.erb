@@ -3,6 +3,7 @@
 <form action="/lists/<%= @list.id %>" method="post">
 
   <label>List Name: </label>
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
   <input type="text" name="name" value ="<%= @list.name %>">
   <input type="submit" name="submit" value="Edit List">
 </form>

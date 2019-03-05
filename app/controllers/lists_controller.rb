@@ -20,13 +20,15 @@ class ListsController < ApplicationController
   post '/lists' do
     if logged_in?
       if params[:name] == ""
+        flash[:notice] = "Please enter list name."
         redirect "/lists/new"
       else
         @list = current_user.lists.build(:name => params[:name])
         if @list.save
+          flash[:notice] = "#{@list.name} list has been successfully created."
           redirect "/lists/#{@list.id}"
         else
-          redirect "/lists/new"
+          redirect "/lists/#{@list.id}"
         end
       end
     else
@@ -47,10 +49,12 @@ class ListsController < ApplicationController
     if logged_in?
       @list = List.find_by_id(params[:id])
       if params[:description] == ""
+        flash[:notice] = "Please enter task."
         redirect "/lists/#{@list.id}"
       else
         @task = @list.tasks.build(:description => params[:description])
         if @task.save
+          flash[:notice] = "Task has been added to list."
           redirect "/lists/#{@list.id}"
         else
           redirect "/lists/#{@list.id}"
@@ -76,7 +80,8 @@ class ListsController < ApplicationController
 
   patch '/lists/:id' do
     if logged_in?
-      if params[:description] == ""
+      if params[:name] == ""
+        params[:notice] = "Please enter list name."
         redirect "/lists/#{params[:id]}/edit"
       else
         @list = List.find_by_id(params[:id])
