@@ -4,11 +4,11 @@
   <ul>
     <% @list.items.each do |item| %>
       <li>
-        <form action="/lists/<%= @list.id %>/delete_item" method="post">
+        <form action="/items/<%= item.id %>/delete" method="post">
           <%= item.description %>
 
           <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="Delete Item">
+          <input type="submit" value="X">
         </form>
       </li>
     <% end %>

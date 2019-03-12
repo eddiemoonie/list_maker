@@ -52,7 +52,7 @@ class ListsController < ApplicationController
         flash[:notice] = "Please enter item."
         redirect "/lists/#{@list.id}"
       else
-        @item = @list.items.build(:description => params[:description])
+        @item = @list.items.build(:description => params[:description], :user_id => current_user.id)
         if @item.save
           flash[:notice] = "Item has been added to list."
           redirect "/lists/#{@list.id}"
