@@ -2,17 +2,24 @@
 
 <div>
   <ul>
-    <% @list.tasks.each do |task| %>
-      <li><%= task.description %></li>
+    <% @list.items.each do |item| %>
+      <li>
+        <form action="/lists/<%= @list.id %>/delete_item" method="post">
+          <%= item.description %>
+
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete Item">
+        </form>
+      </li>
     <% end %>
   </ul>
 </div>
 
-<h4>Create Task</h4>
+<h4>Add Item</h4>
 
 <form action="/lists/<%= @list.id %>" method="post">
   <input type="text" name="description">
-  <input type="submit" name="submit" value="Create Task">
+  <input type="submit" name="submit" value="Add Item">
 </form>
 
 <br>

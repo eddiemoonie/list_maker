@@ -1,4 +1,7 @@
-class TasksController < ApplicationController
+class ItemsController < ApplicationController
+
+
+end
 
   # get '/tasks/new' do
   #   if logged_in?
@@ -8,7 +11,7 @@ class TasksController < ApplicationController
   #     redirect '/login'
   #   end
   # end
-
+  #
   # post '/lists/:id' do
   #   if logged_in?
   #     @list = List.find_by_id(params[:id])
@@ -26,5 +29,3 @@ class TasksController < ApplicationController
   #     redirect '/login'
   #   end
   # end
-
-end

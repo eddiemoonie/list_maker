@@ -49,12 +49,12 @@ class ListsController < ApplicationController
     if logged_in?
       @list = List.find_by_id(params[:id])
       if params[:description] == ""
-        flash[:notice] = "Please enter task."
+        flash[:notice] = "Please enter item."
         redirect "/lists/#{@list.id}"
       else
-        @task = @list.tasks.build(:description => params[:description])
-        if @task.save
-          flash[:notice] = "Task has been added to list."
+        @item = @list.items.build(:description => params[:description])
+        if @item.save
+          flash[:notice] = "Item has been added to list."
           redirect "/lists/#{@list.id}"
         else
           redirect "/lists/#{@list.id}"
@@ -113,4 +113,5 @@ class ListsController < ApplicationController
       redirect '/login'
     end
   end
+
 end
