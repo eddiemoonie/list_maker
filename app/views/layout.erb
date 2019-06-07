@@ -1,11 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>List Maker</title>
+    <link rel="stylesheet" type="text/css" href="<%= url('/style.css') %>" />
+    <link rel="stylesheet" type="text/css" href="<%= url('/application.css') %>" />
   </head>
   <body>
 
-    <div class="container">
+    <header>
       <h1>ListMaker</h1>
       <nav>
         <% if logged_in? %>
@@ -17,16 +19,16 @@
           <button type="submit" name="submit"><a href="/signup">Sign Up</a></button>
         <% end %>
       </nav>
-    </div>
 
-    <br>
+      <br>
 
-    <% flash.keys.each do |type| %>
-      <div data-alert class="flash <%= type %> alert-box radius">
-        <%= flash[type] %>
-        <a href="#" class="close">&times;</a>
-      </div>
-    <% end %>
+      <% flash.keys.each do |type| %>
+        <div data-alert class="flash <%= type %> alert-box radius">
+          <%= flash[type] %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
+    </header>
 
     <%= yield %>
 
