@@ -1,8 +1,12 @@
-<div class="content">
-  <h3><%= current_user.username %>'s Lists</h3>
-  <div class="lists">
-    <% @lists.each do |list| %>
-      <li><a href="/lists/<%= list.id%>"><%= list.name %></a></li>
-    <% end %>
+<div class="lists-container">
+  <div class="list-type1">
+    <ol>
+      <h1><%= current_user.username %>'s Lists</h1>
+
+      <% @lists.each do |list| %>
+        <li><a href="/lists/<%= list.id%>"><%= list.name %></a></li>
+      <% end %>
+      <br>
+    </ol>
   </div>
 </div>

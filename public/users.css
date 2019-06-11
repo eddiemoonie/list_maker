@@ -1,0 +1,15 @@
+.signup-container {
+  text-align: center;
+}
+
+.signup-container form {
+  /* border: 2px solid;
+  margin-top: 10px;
+  margin-bottom: 10px; */
+  text-align: left;
+  display: inline-block;
+}
+
+.login-container {
+  text-align: center;
+}

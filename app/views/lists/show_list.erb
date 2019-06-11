@@ -1,32 +1,38 @@
-<h3><%= @list.name %></h3>
+<div class="list-container">
 
-<div>
-  <ul>
-    <% @list.items.each do |item| %>
-      <li>
-        <form action="/items/<%= item.id %>/delete" method="post">
-          <%= item.description %>
 
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="X">
-        </form>
-      </li>
-    <% end %>
-  </ul>
+  <div class="list-type1">
+    <ol>
+      <h1><%= @list.name %></h1>
+
+      <% @list.items.each do |item| %>
+        <li>
+          <form action="/items/<%= item.id %>/delete" method="post">
+            <%= item.description %>
+
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="X">
+          </form>
+        </li>
+      <% end %>
+
+      <br>
+    </ol>
+
+    <form action="/lists/<%= @list.id %>" method="post">
+      <input type="text" name="description">
+      <input type="submit" name="submit" value="Add Item">
+    </form>
+
+    <br>
+
+    <form action="/lists/<%= @list.id %>/delete" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete List">
+
+      <button type="button" name="edit"><a href="/lists/<%= @list.id %>/edit"> Edit Name </a></button>
+    </form>
+  </div>
+
+
 </div>
-
-<h4>Add Item</h4>
-
-<form action="/lists/<%= @list.id %>" method="post">
-  <input type="text" name="description">
-  <input type="submit" name="submit" value="Add Item">
-</form>
-
-<br>
-
-<form action="/lists/<%= @list.id %>/delete" method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete List">
-
-  <button type="button" name="edit"><a href="/lists/<%= @list.id %>/edit"> Edit List </a></button>
-</form>
