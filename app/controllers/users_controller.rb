@@ -9,11 +9,14 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if params[:username] == "" || params[:password] == ""
+    if params[:username] == "" || params[:password] == "" || params[:pass_confirm] == ""
       flash[:notice] = "Please enter username and password."
       redirect '/signup'
+    elsif params[:password] != params[:pass_confirm]
+      flash[:notice] = "Password confirmation does not match password."
+      redirect '/signup'
     else
-      @user = User.create(:username => params[:username], :password => params[:password])
+      @user = User.create(:username => params[:username], :password => params[:password], :pass_confirm => params[:pass_confirm])
       session[:user_id] = @user.id
       redirect '/lists'
     end

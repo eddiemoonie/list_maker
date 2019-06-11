@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_203825) do
+ActiveRecord::Schema.define(version: 2019_06_11_201647) do
 
   create_table "items", force: :cascade do |t|
     t.string "description"
@@ -23,9 +23,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_203825) do
     t.integer "user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'password_digest' for column 'pass_confirm'
 
 end
