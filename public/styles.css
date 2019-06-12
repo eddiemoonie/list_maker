@@ -13,6 +13,7 @@ header h1 {
 }
 
 header nav {
+  color: #FFF;
   float: right;
   margin: 1.5%;
 }

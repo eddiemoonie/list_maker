@@ -1,15 +1,24 @@
 .signup-container {
+  padding-top: 50px;
   text-align: center;
 }
 
-.signup-container form {
+.signup-form {
   /* border: 2px solid;
   margin-top: 10px;
   margin-bottom: 10px; */
-  text-align: left;
+  text-align: right;
   display: inline-block;
 }
 
 .login-container {
+  text-align: center;
+}
+
+.signup-container label {
+  float: left;
+}
+
+div.sign-up-button {
   text-align: center;
 }
