@@ -1,10 +1,27 @@
-<h2>Edit List</h2>
+<div class="list-container">
+  <div class="list-type1">
+    <ol>
+      <h1><%= @list.name %></h1>
 
-<form action="/lists/<%= @list.id %>" method="post">
+      <% @list.items.each do |item| %>
+        <li>
+          <form action="/items/<%= item.id %>/delete" method="post">
+            <%= item.description %>
 
-  <label>List Name: </label>
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="text" name="name" value ="<%= @list.name %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="button" type="submit" value="X">
+          </form>
+        </li>
+      <% end %>
 
-  <input type="submit" name="submit" value="Edit List">
-</form>
+      <br>
+    </ol>
+  </div>
+
+  <form action="/lists/<%= @list.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <input type="text" name="name" placeholder="<%= @list.name %>">
+
+    <input class="button" type="submit" name="submit" value="Edit">
+  </form>
+</div>

@@ -12,8 +12,8 @@
       <h1>ListMaker</h1>
       <nav>
         <% if logged_in? %>
-          <button type="button"><a href="/lists">My Lists</a></button>
-          <button type="button"><a href="/logout">Log Out</a></button>
+          <a href="/lists"><button type="button">My Lists</button></a>
+          <a href="/logout"><button type="button">Log Out</button></a>
         <% else %>
           <form action="/login" method="post">
             <input type="text" name="username" placeholder="Username">

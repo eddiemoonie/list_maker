@@ -20,15 +20,15 @@
 
   <form action="/lists/<%= @list.id %>" method="post">
     <input type="text" name="description">
-    <input type="submit" name="submit" value="Add Item">
+    <input class="button" type="submit" name="submit" value="Add Item">
   </form>
 
   <br>
 
   <form action="/lists/<%= @list.id %>/delete" method="post">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete List">
+    <input class="button" type="submit" value="Delete List">
 
-    <button type="button" name="edit"><a href="/lists/<%= @list.id %>/edit"> Edit Name </a></button>
+    <a href="/lists/<%= @list.id %>/edit"><button class="button" type="button" name="edit">Edit</button></a>
   </form>
 </div>
