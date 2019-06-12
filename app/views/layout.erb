@@ -16,16 +16,10 @@
           <button type="button"><a href="/logout">Log Out</a></button>
         <% else %>
           <form action="/login" method="post">
-            <!-- <label>Username: </label> -->
             <input type="text" name="username" placeholder="Username">
-
-            <!-- <label>Password:</label> -->
             <input type="password" name="password" placeholder="Password">
-
             <input type="submit" value="Log In">
           </form>
-          <!-- <button type="submit" name="submit"><a href="/login">Log In</a></button>
-          <button type="submit" name="submit"><a href="/signup">Sign Up</a></button> -->
         <% end %>
       </nav>
 
@@ -40,8 +34,6 @@
         </div>
       <% end %>
     </div>
-
-
 
     <%= yield %>
 
