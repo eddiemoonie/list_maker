@@ -1,10 +1,10 @@
 .lists-container {
-  padding-top: 50px;
+  padding-top: 5px;
   text-align: center;
 }
 
 .list-container {
-  padding-top: 50px;
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -18,7 +18,6 @@
   list-style: none;
   *list-style: decimal;
   font-size: 15px;
-  font-family: 'Raleway', sans-serif;
   padding: 0;
   margin-bottom: 4em;
 

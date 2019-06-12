@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
-  # get '/signup' do
-  #   if !logged_in?
-  #     erb :'users/create_users'
-  #   else
-  #     redirect '/lists'
-  #   end
-  # end
+  get '/signup' do
+    if !logged_in?
+      erb :'users/create_users'
+    else
+      redirect '/lists'
+    end
+  end
 
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:pass_confirm] == ""

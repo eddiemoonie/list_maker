@@ -1,6 +1,9 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 header {
   border-bottom: 1px solid;
-  font-family: 'Raleway', sans-serif;
   background:#93C775;
 }
 
@@ -12,12 +15,17 @@ header h1 {
   padding-left: 10px;
 }
 
+.logo {
+  background: #93C775;
+}
+
 header nav {
   color: #FFF;
   float: right;
   margin: 1.5%;
 }
 
-div.flash-alert {
-  float: none;
+.flash-box {
+  margin: 40px;
+  text-align: center;
 }

@@ -1,5 +1,5 @@
 .signup-container {
-  padding-top: 50px;
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -21,4 +21,17 @@
 
 div.sign-up-button {
   text-align: center;
+}
+
+.new-user-button {
+  text-align: center;
+  margin: 20%;
+}
+
+.new-user-button button {
+  font-size: 50px;
+  background:#93C775;
+  color: #FFF;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
 }

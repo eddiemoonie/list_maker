@@ -12,15 +12,15 @@
       <h1>ListMaker</h1>
       <nav>
         <% if logged_in? %>
-          <button type="submit" name="submit"><a href="/lists">My Lists</a></button>
-          <button type="submit" name="submit"><a href="/logout">Log Out</a></button>
+          <button type="button"><a href="/lists">My Lists</a></button>
+          <button type="button"><a href="/logout">Log Out</a></button>
         <% else %>
           <form action="/login" method="post">
-            <label>Username: </label>
-            <input type="text" name="username">
+            <!-- <label>Username: </label> -->
+            <input type="text" name="username" placeholder="Username">
 
-            <label>Password:</label>
-            <input type="password" name="password">
+            <!-- <label>Password:</label> -->
+            <input type="password" name="password" placeholder="Password">
 
             <input type="submit" value="Log In">
           </form>
@@ -32,12 +32,16 @@
       <br>
     </header>
 
-    <% flash.keys.each do |type| %>
-      <div data-alert class="flash-alert">
-        <%= flash[type] %>
-        <a href="#" class="close">&times;</a>
-      </div>
-    <% end %>
+    <div class="flash-box">
+      <% flash.keys.each do |type| %>
+        <div data-alert class="flash-alert">
+          <%= flash[type] %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
+    </div>
+
+
 
     <%= yield %>
 
