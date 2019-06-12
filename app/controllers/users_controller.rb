@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
-  get '/signup' do
-    if !logged_in?
-      erb :'users/create_users'
-    else
-      redirect '/lists'
-    end
-  end
+  # get '/signup' do
+  #   if !logged_in?
+  #     erb :'users/create_users'
+  #   else
+  #     redirect '/lists'
+  #   end
+  # end
 
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:pass_confirm] == ""
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect '/signup'
     elsif params[:password] != params[:pass_confirm]
       flash[:notice] = "Password confirmation does not match password."
-      redirect '/signup'
+      redirect '/'
     else
       @user = User.create(:username => params[:username], :password => params[:password], :pass_confirm => params[:pass_confirm])
       session[:user_id] = @user.id
@@ -22,13 +22,13 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/login' do
-    if !logged_in?
-      erb :'users/login'
-    else
-      redirect '/lists'
-    end
-  end
+  # get '/login' do
+  #   if !logged_in?
+  #     erb :'users/login'
+  #   else
+  #     redirect '/lists'
+  #   end
+  # end
 
   post '/login' do
     user = User.find_by(:username => params[:username])
@@ -38,15 +38,13 @@ class UsersController < ApplicationController
       redirect '/lists'
     else
       flash[:notice] = "Username and password do not match. Please try again. "
-      redirect '/login'
+      redirect '/'
     end
   end
 
   get '/logout' do
     if logged_in?
       session.destroy
-      redirect '/login'
-    else
       redirect '/'
     end
   end

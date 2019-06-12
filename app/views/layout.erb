@@ -13,23 +13,31 @@
       <nav>
         <% if logged_in? %>
           <button type="submit" name="submit"><a href="/lists">My Lists</a></button>
-          <button type="submit" name="submit"><a href="/lists/new">Create New List</a></button>
           <button type="submit" name="submit"><a href="/logout">Log Out</a></button>
         <% else %>
-          <button type="submit" name="submit"><a href="/login">Log In</a></button>
-          <button type="submit" name="submit"><a href="/signup">Sign Up</a></button>
+          <form action="/login" method="post">
+            <label>Username: </label>
+            <input type="text" name="username">
+
+            <label>Password:</label>
+            <input type="password" name="password">
+
+            <input type="submit" value="Log In">
+          </form>
+          <!-- <button type="submit" name="submit"><a href="/login">Log In</a></button>
+          <button type="submit" name="submit"><a href="/signup">Sign Up</a></button> -->
         <% end %>
       </nav>
 
       <br>
-
-      <% flash.keys.each do |type| %>
-        <div data-alert class="flash <%= type %> alert-box radius">
-          <%= flash[type] %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% end %>
     </header>
+
+    <% flash.keys.each do |type| %>
+      <div data-alert class="flash-alert">
+        <%= flash[type] %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
 
     <%= yield %>
 

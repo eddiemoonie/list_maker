@@ -9,13 +9,13 @@ class ListsController < ApplicationController
     end
   end
 
-  get '/lists/new' do
-    if logged_in?
-      erb :'lists/create_list'
-    else
-      redirect '/login'
-    end
-  end
+  # get '/lists/new' do
+  #   if logged_in?
+  #     erb :'lists/create_list'
+  #   else
+  #     redirect '/login'
+  #   end
+  # end
 
   post '/lists' do
     if logged_in?

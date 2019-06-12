@@ -1,5 +1,22 @@
 header {
-  text-align: center;
   border-bottom: 1px solid;
   font-family: 'Raleway', sans-serif;
+  background:#93C775;
+}
+
+header h1 {
+  margin: 0 auto;
+  display: inline;
+  color: #FFF;
+  font-size: 50px;
+  padding-left: 10px;
+}
+
+header nav {
+  float: right;
+  margin: 1.5%;
+}
+
+div.flash-alert {
+  float: none;
 }
